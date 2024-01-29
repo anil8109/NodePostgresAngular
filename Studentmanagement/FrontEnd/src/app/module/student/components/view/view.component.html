@@ -1,0 +1,65 @@
+
+
+
+<!-- Angular Mterial -->
+<!-- 
+  <table mat-table [dataSource]="data" style="width: 100%">
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let student"> 
+            {{ student.name | uppercase }} 
+        </td>
+    </ng-container>  
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let student"> {{ student.email | slice :  0 : 5   }} </td>
+    </ng-container>  
+    <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef> Role </th>
+        <td mat-cell *matCellDef="let student"> {{ student.role }} </td>
+    </ng-container>  
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let student"> 
+            <a [routerLink]="['/student/edit',student.id]" >Edit</a> 
+            <a [routerLink]="['/delete',student.id]" > Delete</a>  
+        </td>
+    </ng-container>  
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+
+</table> -->
+
+
+<!-- Normal View -->
+<div class="container mt-5 ml-5"  style="padding-top: 131px;
+padding-left: 190px;">
+    <table class="table">
+        <thead>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Class</th>
+          <th> Action </th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of data">
+            <td>{{student.name}}</td>
+            <td>    
+              {{ student.email }}
+            </td>
+            <td>
+                {{ student.role }} 
+            </td>
+            <td>
+                {{ student.class }}
+            </td>
+            <td>
+                <a [routerLink]="['/student/edit',student.id]" > <button class="btn btn-primary m-1" >Edit</button> </a> 
+                <button class="btn btn-danger m-1" (click)="deleteStudent(student)" >Delete</button> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>

@@ -1,0 +1,15 @@
+.img_class{
+    height: 126px;
+width: 144px;
+margin: 0px 10px 0px 99px;
+}
+.headerPadding{
+    margin-left: auto;
+padding: 0px 165px;
+}
+.position{
+    position: fixed;
+width: 100%;
+margin: -47px 0px 0px 0px;
+z-index: 1000;
+}

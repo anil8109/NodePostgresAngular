@@ -1,0 +1,31 @@
+<div class="container mt-5 ml-5" style="padding-top: 131px;
+padding-left: 190px;">
+    <table class="table">
+        <thead>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Class</th>
+          <th> Action </th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of data">
+            <td>{{student.name}}</td>
+            <td>    
+              {{ student.email }}
+            </td>
+            <td>
+                {{ student.role }} 
+            </td>
+            <td>
+                {{ student.class }}
+            </td>
+            <td>
+                <a [routerLink]="['/teacher/editStudent',student.id]" > <button class="btn btn-primary m-1" >Edit</button> </a> 
+                <button class="btn btn-danger m-1" (click)="deleteStudent(student)" >Delete</button> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>
